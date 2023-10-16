@@ -18,7 +18,7 @@ export default function Login() {
     const content = await res.json()
 
     if (res.status == 400) {
-      setBody(content.error)
+      setBody(content.error!)
       setType(ToastType.Error)
       setIsShow(true)
     }

@@ -1,10 +1,10 @@
 import { URL_API_REGISTER } from "@/app/constant/backendPath"
 
 interface ResRegisterUser {
-  data: {
+  data?: {
     user_id: number
   }
-  error: string
+  error?: string
 }
 
 interface ResponseRegisterUser extends Response {

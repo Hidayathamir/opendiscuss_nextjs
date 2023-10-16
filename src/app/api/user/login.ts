@@ -1,10 +1,10 @@
 import { URL_API_LOGIN } from "@/app/constant/backendPath"
 
 interface ResLoginUser {
-  data: {
+  data?: {
     token: string
   }
-  error: string
+  error?: string
 }
 
 interface ResponseLoginUser extends Response {
