@@ -24,7 +24,9 @@ export default function RootLayout({
           show={isShow}
           toastType={type}
         />
-        <div>{children}</div>
+        <div className="container" style={{ maxWidth: 600 }}>
+          {children}
+        </div>
         <BootstrapClient />
       </body>
     </html>
