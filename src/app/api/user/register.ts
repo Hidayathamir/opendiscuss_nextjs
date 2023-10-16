@@ -1,18 +1,18 @@
 import { URL_API_REGISTER } from "@/app/constant/backendPath"
 
-interface ResRegisterUser {
+interface IResRegisterUser {
   data?: {
     user_id: number
   }
   error?: string
 }
 
-interface ResponseRegisterUser extends Response {
-  json(): Promise<ResRegisterUser>
+interface IResponseRegisterUser extends Response {
+  json(): Promise<IResRegisterUser>
 }
 
 export async function registerUser(username: string, password: string) {
-  const res: ResponseRegisterUser = await fetch(URL_API_REGISTER, {
+  const res: IResponseRegisterUser = await fetch(URL_API_REGISTER, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

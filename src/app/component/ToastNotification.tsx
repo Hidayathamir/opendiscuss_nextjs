@@ -11,14 +11,14 @@ export enum ToastType {
   Error,
 }
 
-interface propToastNotification {
+interface IPropToastNotification {
   body: string
   show: boolean
   onClose: () => void
   toastType: ToastType
 }
 
-export default function ToastNotification(prop: propToastNotification) {
+export default function ToastNotification(prop: IPropToastNotification) {
   const getBorderColorClass = () => {
     if (prop.toastType == ToastType.Info) {
       return "border-primary"

@@ -2,7 +2,7 @@ import { create } from "zustand"
 import { ToastType } from "../component/ToastNotification"
 import { sleep } from "../util/sleep"
 
-interface ToastState {
+interface IToastState {
   body: string
   setBody: (newBody: string) => void
 
@@ -13,7 +13,7 @@ interface ToastState {
   setType: (_type: ToastType) => void
 }
 
-export const useToastStore = create<ToastState>((set) => ({
+export const useToastStore = create<IToastState>((set) => ({
   body: "",
   setBody: (newBody: string) => set(() => ({ body: newBody })),
 
