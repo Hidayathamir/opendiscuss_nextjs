@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { registerUser } from "../api/user/register"
 import { ToastType } from "../component/ToastNotification"
-import { URL_LOGIN_PAGE } from "../constant/frontend_path"
+import { URL_LOGIN_PAGE } from "../constant/frontendPath"
 import { useToastStore } from "../state/toast"
 
 export default function Register() {

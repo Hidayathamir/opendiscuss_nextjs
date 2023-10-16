@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { URL_HOME_PAGE } from "../constant/frontend_path"
+import { URL_HOME_PAGE } from "../constant/frontendPath"
 
 export default function NavigationBar() {
   return (

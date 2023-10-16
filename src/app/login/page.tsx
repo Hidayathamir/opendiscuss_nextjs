@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { loginUser } from "../api/user/login"
 import { ToastType } from "../component/ToastNotification"
-import { URL_REGISTER_PAGE } from "../constant/frontend_path"
+import { URL_REGISTER_PAGE } from "../constant/frontendPath"
 import { useToastStore } from "../state/toast"
 
 export default function Login() {
