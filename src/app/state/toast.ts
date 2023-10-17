@@ -1,6 +1,6 @@
 import { create } from "zustand"
 import { ToastType } from "../component/ToastNotification"
-import { sleep } from "../util/sleep"
+import { sleep } from "../util/util"
 
 interface IToastState {
   body: string

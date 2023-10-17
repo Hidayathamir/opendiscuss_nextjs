@@ -5,7 +5,7 @@ export default function NavigationBar() {
   return (
     <div>
       <nav
-        className="navbar navbar-expand-lg bg-primary shadow"
+        className="navbar navbar-expand-lg bg-primary shadow-lg"
         data-bs-theme="dark"
       >
         <div className="container">
