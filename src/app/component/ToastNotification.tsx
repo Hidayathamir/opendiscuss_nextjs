@@ -4,6 +4,7 @@ import {
   default as Toast,
 } from "react-bootstrap/Toast"
 import ToastContainer from "react-bootstrap/ToastContainer"
+import { BG_DARK_3, TXT_WHITE_1 } from "../constant/color"
 
 export enum ToastType {
   Info,
@@ -48,10 +49,25 @@ export default function ToastNotification(prop: IPropToastNotification) {
   return (
     <ToastContainer
       position="top-center"
-      className={"m-5 border rounded " + getBorderColorClass()}
+      className={"my-5 border rounded " + getBorderColorClass()}
+      style={{ backgroundColor: BG_DARK_3, color: TXT_WHITE_1 }}
     >
-      <Toast show={prop.show} onClose={prop.onClose} autohide>
-        <Header className="d-flex p-2 rounded-0">
+      <Toast
+        show={prop.show}
+        onClose={prop.onClose}
+        style={
+          {
+            "--bs-body-bg-rgb": "none",
+          } as React.CSSProperties
+        }
+        autohide
+      >
+        <Header
+          className={
+            "d-flex p-2 rounded-0 border-top-0 border-start-0 border-end-0 " +
+            getBorderColorClass()
+          }
+        >
           <i className={"bi bi-square-fill px-1 " + getTextColorClass()} />
           <strong className="me-auto">Opendiscuss</strong>
           <i role="button" className="bi bi-x" onClick={prop.onClose} />
