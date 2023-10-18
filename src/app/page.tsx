@@ -18,7 +18,7 @@ export default function Home() {
     const res = await getQuestionList()
     const content = await res.json()
 
-    if (res.status == 400) {
+    if (!(res.status >= 200 && res.status < 300)) {
       setBody(content.error!)
       setType(ToastType.Error)
       setIsShow(true)

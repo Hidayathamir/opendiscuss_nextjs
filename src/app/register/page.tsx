@@ -20,18 +20,17 @@ export default function Register() {
     const res = await registerUser(username, password)
     const content = await res.json()
 
-    if (res.status == 400) {
+    if (!(res.status >= 200 && res.status < 300)) {
       setBody(content.error!)
       setType(ToastType.Error)
       setIsShow(true)
+      return
     }
 
-    if (res.status == 200) {
-      setBody("register success")
-      setType(ToastType.Success)
-      setIsShow(true)
-      push(URL_LOGIN_PAGE)
-    }
+    setBody("register success")
+    setType(ToastType.Success)
+    setIsShow(true)
+    push(URL_LOGIN_PAGE)
   }
 
   return (

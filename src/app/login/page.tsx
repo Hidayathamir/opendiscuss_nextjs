@@ -17,17 +17,16 @@ export default function Login() {
     const res = await loginUser(username, password)
     const content = await res.json()
 
-    if (res.status == 400) {
+    if (!(res.status >= 200 && res.status < 300)) {
       setBody(content.error!)
       setType(ToastType.Error)
       setIsShow(true)
+      return
     }
 
-    if (res.status == 200) {
-      setBody("login success")
-      setType(ToastType.Success)
-      setIsShow(true)
-    }
+    setBody("login success")
+    setType(ToastType.Success)
+    setIsShow(true)
   }
 
   return (
