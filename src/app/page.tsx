@@ -11,6 +11,7 @@ import { useToastStore } from "./state/toast"
 
 export default function Home() {
   const [questions, setQuestions] = useState<IQuestionHighlight[]>([])
+  const [x, setX] = useState(0.1)
 
   const { setBody, setIsShow, setType } = useToastStore()
 
@@ -28,15 +29,22 @@ export default function Home() {
     setQuestions(content.data!.questions)
   }
 
+  const refetchQuestion = () => {
+    setX(Math.random())
+  }
+
   useEffect(() => {
     _getQuestionList()
-  }, [])
+  }, [x])
 
   return (
     <main>
       {questions.map((questionHighlight, index) => (
         <div key={questionHighlight.author + index}>
-          <QuestionHighlight question={questionHighlight} />
+          <QuestionHighlight
+            question={questionHighlight}
+            refetchQuestion={refetchQuestion}
+          />
         </div>
       ))}
     </main>
