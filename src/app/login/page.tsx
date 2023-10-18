@@ -1,10 +1,12 @@
 "use client"
 
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { loginUser } from "../api/user/login"
 import { ToastType } from "../component/ToastNotification"
-import { URL_REGISTER_PAGE } from "../constant/frontendPath"
+import { KEY_LOCAL_STORAGE_JWT_TOKEN } from "../constant/constant"
+import { URL_HOME_PAGE, URL_REGISTER_PAGE } from "../constant/frontendPath"
 import { useToastStore } from "../state/toast"
 
 export default function Login() {
@@ -12,6 +14,8 @@ export default function Login() {
   const [password, setPassword] = useState("")
 
   const { setBody, setIsShow, setType } = useToastStore()
+
+  const { push } = useRouter()
 
   const _login = async (username: string, password: string) => {
     const res = await loginUser(username, password)
@@ -24,9 +28,12 @@ export default function Login() {
       return
     }
 
+    localStorage.setItem(KEY_LOCAL_STORAGE_JWT_TOKEN, content.data!.token)
+
     setBody("login success")
     setType(ToastType.Success)
     setIsShow(true)
+    push(URL_HOME_PAGE)
   }
 
   return (
