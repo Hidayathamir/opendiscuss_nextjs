@@ -1,4 +1,4 @@
-import { URL_API_DELETE_QUESTION } from "@/app/constant/backendPath"
+import { URL_API_DELETE_QUESTION } from "@/constant/backendPath"
 
 interface IResDeleteQuestion {
   data?: {
