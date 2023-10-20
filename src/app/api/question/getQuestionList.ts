@@ -1,4 +1,4 @@
-import { URL_API_QUESTIONS } from "@/app/constant/backendPath"
+import { URL_API_QUESTIONS } from "@/constant/backendPath"
 
 export interface IQuestionHighlight {
   id: number
