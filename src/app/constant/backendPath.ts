@@ -5,7 +5,7 @@ export enum VoteOption {
   ThumbsUp = "thumbsup",
   ThumbsDown = "thumbsdown",
 }
-export const URL_API_VOTE_QUESTIONS = (
+export const URL_API_VOTE_QUESTION = (
   questionId: number,
   voteOption: VoteOption,
 ) => {

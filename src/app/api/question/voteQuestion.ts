@@ -1,4 +1,4 @@
-import { URL_API_VOTE_QUESTIONS, VoteOption } from "@/app/constant/backendPath"
+import { URL_API_VOTE_QUESTION, VoteOption } from "@/app/constant/backendPath"
 
 interface IResVoteQuestion {
   data?: {
@@ -17,7 +17,7 @@ export async function voteQuestion(
   voteOption: VoteOption,
 ) {
   const res: IResponseVoteQuestion = await fetch(
-    URL_API_VOTE_QUESTIONS(questionId, voteOption),
+    URL_API_VOTE_QUESTION(questionId, voteOption),
     { method: "POST", headers: { Authorization: jwtToken } },
   )
   return res
