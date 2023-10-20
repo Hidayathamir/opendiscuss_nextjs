@@ -12,7 +12,7 @@ export default function Register() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  const { setBody, setIsShow, setType } = useToastStore()
+  const { setToastBody, setIsToastShow, setToastType } = useToastStore()
 
   const { push } = useRouter()
 
@@ -21,15 +21,15 @@ export default function Register() {
     const content = await res.json()
 
     if (!(res.status >= 200 && res.status < 300)) {
-      setBody(content.error!)
-      setType(ToastType.Error)
-      setIsShow(true)
+      setToastBody(content.error!)
+      setToastType(ToastType.Error)
+      setIsToastShow(true)
       return
     }
 
-    setBody("register success")
-    setType(ToastType.Success)
-    setIsShow(true)
+    setToastBody("register success")
+    setToastType(ToastType.Success)
+    setIsToastShow(true)
     push(URL_LOGIN_PAGE)
   }
 

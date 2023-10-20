@@ -13,7 +13,7 @@ export default function Login() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  const { setBody, setIsShow, setType } = useToastStore()
+  const { setToastBody, setIsToastShow, setToastType } = useToastStore()
 
   const { push } = useRouter()
 
@@ -22,17 +22,17 @@ export default function Login() {
     const content = await res.json()
 
     if (!(res.status >= 200 && res.status < 300)) {
-      setBody(content.error!)
-      setType(ToastType.Error)
-      setIsShow(true)
+      setToastBody(content.error!)
+      setToastType(ToastType.Error)
+      setIsToastShow(true)
       return
     }
 
     localStorage.setItem(KEY_LOCAL_STORAGE_JWT_TOKEN, content.data!.token)
 
-    setBody("login success")
-    setType(ToastType.Success)
-    setIsShow(true)
+    setToastBody("login success")
+    setToastType(ToastType.Success)
+    setIsToastShow(true)
     push(URL_HOME_PAGE)
   }
 

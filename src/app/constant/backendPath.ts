@@ -11,3 +11,6 @@ export const URL_API_VOTE_QUESTION = (
 ) => {
   return `http://localhost:8080/api/v1/questions/${questionId}/${voteOption}`
 }
+export const URL_API_DELETE_QUESTION = (questionId: number) => {
+  return `http://localhost:8080/api/v1/questions/${questionId}`
+}

@@ -3,29 +3,31 @@ import { ToastType } from "../component/ToastNotification"
 import { sleep } from "../util/util"
 
 interface IToastState {
-  body: string
-  setBody: (newBody: string) => void
+  toastBody: string
+  setToastBody: (newToastBody: string) => void
 
-  isShow: boolean
-  setIsShow: (_isShow: boolean) => void
+  isToastShow: boolean
+  setIsToastShow: (newIsToastShow: boolean) => void
 
-  type: ToastType
-  setType: (_type: ToastType) => void
+  toastType: ToastType
+  setToastType: (newToastType: ToastType) => void
 }
 
 export const useToastStore = create<IToastState>((set) => ({
-  body: "",
-  setBody: (newBody: string) => set(() => ({ body: newBody })),
+  toastBody: "",
+  setToastBody: (newToastBody: string) =>
+    set(() => ({ toastBody: newToastBody })),
 
-  isShow: false,
-  setIsShow: async (_isShow: boolean) => {
-    if (_isShow == true) {
-      set(() => ({ isShow: false }))
+  isToastShow: false,
+  setIsToastShow: async (newIsToastShow: boolean) => {
+    if (newIsToastShow == true) {
+      set(() => ({ isToastShow: false }))
       await sleep(50)
     }
-    set(() => ({ isShow: _isShow }))
+    set(() => ({ isToastShow: newIsToastShow }))
   },
 
-  type: ToastType.Info,
-  setType: (_type: ToastType) => set(() => ({ type: _type })),
+  toastType: ToastType.Info,
+  setToastType: (newToastType: ToastType) =>
+    set(() => ({ toastType: newToastType })),
 }))

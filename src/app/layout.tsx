@@ -3,9 +3,11 @@
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import BootstrapClient from "./component/BootstrapClient"
+import ModalConfirmation from "./component/ModalConfirmation"
 import NavigationBar from "./component/NavigationBar"
 import ToastNotification from "./component/ToastNotification"
 import { BG_DARK_1, BG_DARK_2 } from "./constant/color"
+import { useModalStore } from "./state/modal"
 import { useToastStore } from "./state/toast"
 
 export default function RootLayout({
@@ -13,18 +15,29 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const { body, isShow, setIsShow, type } = useToastStore()
+  const { toastBody, isToastShow, setIsToastShow, toastType } = useToastStore()
+
+  const { modalBody, isModalShow, setIsModalShow, onModalConfirm } =
+    useModalStore()
 
   return (
     <html lang="en">
       <body style={{ backgroundColor: BG_DARK_2 }}>
         <ToastNotification
-          body={body}
+          body={toastBody}
           onClose={() => {
-            setIsShow(false)
+            setIsToastShow(false)
           }}
-          show={isShow}
-          toastType={type}
+          show={isToastShow}
+          toastType={toastType}
+        />
+        <ModalConfirmation
+          show={isModalShow}
+          handleClose={() => {
+            setIsModalShow(false)
+          }}
+          body={modalBody}
+          onConfirm={onModalConfirm}
         />
         <div
           className="container p-0 min-vh-100"
