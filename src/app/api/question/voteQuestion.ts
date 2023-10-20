@@ -1,4 +1,4 @@
-import { URL_API_VOTE_QUESTION, VoteOption } from "@/app/constant/backendPath"
+import { URL_API_VOTE_QUESTION, VoteOption } from "@/constant/backendPath"
 
 interface IResVoteQuestion {
   data?: {

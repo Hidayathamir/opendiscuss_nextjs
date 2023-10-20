@@ -1,8 +1,8 @@
 "use client"
 
-import { deleteQuestion } from "../api/question/deleteQuestion"
-import { IQuestionHighlight } from "../api/question/getQuestionList"
-import { voteQuestion } from "../api/question/voteQuestion"
+import { deleteQuestion } from "@/app/api/question/deleteQuestion"
+import { IQuestionHighlight } from "@/app/api/question/getQuestionList"
+import { voteQuestion } from "@/app/api/question/voteQuestion"
 import { VoteOption } from "../constant/backendPath"
 import { BG_DARK_1, BG_DARK_3, TXT_WHITE_1 } from "../constant/color"
 import { KEY_LOCAL_STORAGE_JWT_TOKEN } from "../constant/constant"

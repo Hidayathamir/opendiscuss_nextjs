@@ -1,14 +1,14 @@
 "use client"
 
+import BootstrapClient from "@/component/BootstrapClient"
+import ModalConfirmation from "@/component/ModalConfirmation"
+import NavigationBar from "@/component/NavigationBar"
+import ToastNotification from "@/component/ToastNotification"
+import { BG_DARK_1, BG_DARK_2 } from "@/constant/color"
+import { useModalStore } from "@/state/modal"
+import { useToastStore } from "@/state/toast"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap/dist/css/bootstrap.min.css"
-import BootstrapClient from "./component/BootstrapClient"
-import ModalConfirmation from "./component/ModalConfirmation"
-import NavigationBar from "./component/NavigationBar"
-import ToastNotification from "./component/ToastNotification"
-import { BG_DARK_1, BG_DARK_2 } from "./constant/color"
-import { useModalStore } from "./state/modal"
-import { useToastStore } from "./state/toast"
 
 export default function RootLayout({
   children,

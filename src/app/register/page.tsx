@@ -3,10 +3,10 @@
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { ToastType } from "../../component/ToastNotification"
+import { URL_LOGIN_PAGE } from "../../constant/frontendPath"
+import { useToastStore } from "../../state/toast"
 import { registerUser } from "../api/user/register"
-import { ToastType } from "../component/ToastNotification"
-import { URL_LOGIN_PAGE } from "../constant/frontendPath"
-import { useToastStore } from "../state/toast"
 
 export default function Register() {
   const [username, setUsername] = useState("")

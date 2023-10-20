@@ -1,13 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import QuestionHighlight from "../component/QuestionHighlight"
+import { ToastType } from "../component/ToastNotification"
+import { useToastStore } from "../state/toast"
 import {
   IQuestionHighlight,
   getQuestionList,
 } from "./api/question/getQuestionList"
-import QuestionHighlight from "./component/QuestionHighlight"
-import { ToastType } from "./component/ToastNotification"
-import { useToastStore } from "./state/toast"
 
 export default function Home() {
   const [questions, setQuestions] = useState<IQuestionHighlight[]>([])
