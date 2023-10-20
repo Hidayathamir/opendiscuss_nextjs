@@ -1,4 +1,4 @@
-import { URL_API_LOGIN } from "@/app/constant/backendPath"
+import { URL_API_LOGIN } from "@/constant/backendPath"
 
 interface IResLoginUser {
   data?: {

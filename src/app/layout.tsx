@@ -2,11 +2,11 @@
 
 import "bootstrap-icons/font/bootstrap-icons.css"
 import "bootstrap/dist/css/bootstrap.min.css"
-import BootstrapClient from "./component/BootstrapClient"
-import NavigationBar from "./component/NavigationBar"
-import ToastNotification from "./component/ToastNotification"
-import { BG_DARK_1, BG_DARK_2 } from "./constant/color"
-import { useToastStore } from "./state/toast"
+import BootstrapClient from "../component/BootstrapClient"
+import NavigationBar from "../component/NavigationBar"
+import ToastNotification from "../component/ToastNotification"
+import { BG_DARK_1, BG_DARK_2 } from "../constant/color"
+import { useToastStore } from "../state/toast"
 
 export default function RootLayout({
   children,

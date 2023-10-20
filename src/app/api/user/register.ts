@@ -1,4 +1,4 @@
-import { URL_API_REGISTER } from "@/app/constant/backendPath"
+import { URL_API_REGISTER } from "@/constant/backendPath"
 
 interface IResRegisterUser {
   data?: {
