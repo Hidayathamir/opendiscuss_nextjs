@@ -13,16 +13,16 @@ export default function Home() {
   const [questions, setQuestions] = useState<IQuestionHighlight[]>([])
   const [x, setX] = useState(0.1)
 
-  const { setBody, setIsShow, setType } = useToastStore()
+  const { setToastBody, setIsToastShow, setToastType } = useToastStore()
 
   const _getQuestionList = async () => {
     const res = await getQuestionList()
     const content = await res.json()
 
     if (!(res.status >= 200 && res.status < 300)) {
-      setBody(content.error!)
-      setType(ToastType.Error)
-      setIsShow(true)
+      setToastBody(content.error!)
+      setToastType(ToastType.Error)
+      setIsToastShow(true)
       return
     }
 

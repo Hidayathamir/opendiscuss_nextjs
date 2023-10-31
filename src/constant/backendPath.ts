@@ -5,9 +5,12 @@ export enum VoteOption {
   ThumbsUp = "thumbsup",
   ThumbsDown = "thumbsdown",
 }
-export const URL_API_VOTE_QUESTIONS = (
+export const URL_API_VOTE_QUESTION = (
   questionId: number,
   voteOption: VoteOption,
 ) => {
   return `http://localhost:9080/api/v1/questions/${questionId}/${voteOption}`
+}
+export const URL_API_DELETE_QUESTION = (questionId: number) => {
+  return `http://localhost:9080/api/v1/questions/${questionId}`
 }
